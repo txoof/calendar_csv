@@ -6,6 +6,7 @@
 
 
 
+
 import csv
 # remove this and move to just argparse -- use only standard modules
 # import ArgConfigParse
@@ -108,15 +109,32 @@ def read_non_instruction(file, dt_format):
     Args:
         file(`str` or `Path`): file to read'''
     # read vacation/non instructional days list
+    errors = []
     with open(file, 'r') as open_file:
         file_txt = open_file.readlines()
 
     non_instruction_dt = []
-    for i in file_txt:
+    for idx, val in enumerate(file_txt):
         try:
-            non_instruction_dt.append(datetime.strptime(i.strip(), dt_format))
+            non_instruction_dt.append(datetime.strptime(val.strip(), dt_format))
         except ValueError as e:
-            logging.debug(f'skipping unknown date format in {file_txt}: "{i}""')
+            # capture all the errors
+            if val.isspace():
+                pass
+            else:
+                errors.append((idx, val))
+            
+    if errors:
+        print(f'Non-Instructional Days file "{file}" contains unknown date formats.')
+        print(f'each line should contain only the date in the specified format.')
+        print(f'default format: YYYY/MM/DD e.g. 2022/08/28')
+        print(f'Current expected date format: {dt_format}')
+        print('='*40)
+        for each in errors:
+            print(f'\tline: {each[0]+1} -- "{each[1].rstrip()}"')
+        print('='*40)
+        do_exit(f'unexpected date formats in "{file}".', 1)
+#             do_exit(f'unknown date format in file {file} line {idx+1}: "{val}" \n expected format: "{dt_format}"', 1)
         
     return non_instruction_dt
 
@@ -334,7 +352,7 @@ def main():
     args, unknown_args = get_args()
     log_level = 40
     if args.verbose:
-        log_level = log_level-args.verbose
+        log_level = log_level-(args.verbose*10)
     logging.root.setLevel(log_level)
 
     # create a blank schedule 
