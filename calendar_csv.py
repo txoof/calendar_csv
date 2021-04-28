@@ -131,7 +131,7 @@ def read_non_instruction(file, dt_format):
         print(f'Current expected date format: {dt_format}')
         print('='*40)
         for each in errors:
-            print(f'\tline: {each[0]+1} -- "{each[1].rstrip()}"')
+            print(f'\tline: {each[0]+1} -> "{each[1].rstrip()}"')
         print('='*40)
         do_exit(f'unexpected date formats in "{file}".', 1)
 #             do_exit(f'unknown date format in file {file} line {idx+1}: "{val}" \n expected format: "{dt_format}"', 1)
@@ -205,6 +205,8 @@ def get_events(dicts):
         raise TypeError(f'expected list of dictionaries, recieved {type(dicts)}')
     events_unique = set()
     for d in dicts:
+        if len(d) < 1:
+            continue
         for day, schedule in d.items():
             for event in schedule:
                 events_unique.add(event['name'])
@@ -423,6 +425,8 @@ def main():
         rotation_len = len(schedule_standard)
         if alternate_day:
             schedule_alternate = schedule_json['alternate']
+        else:
+            schedule_alternate = []
     except KeyError as e:
         do_exit(f'{file_schedule} missing section: {e}\nTry regenerating the schedule file from scratch (--blank)', 1)
 
