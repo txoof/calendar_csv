@@ -1,6 +1,9 @@
 # Google Calendar CSV Generator
-Python script for generating files suitable for import into Google Calendar based on `.json` schedule files for N-day rotating block schedules.
+Python script for generating files suitable for import into Google Calendar based on `.json` schedule files for N-day rotating block schedules. This script will produce one CSV for each unique event as well as a CSV for each day in the block rotation.
 
+If your schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven CSV files will be produced (one for each block, lunch, break and one for all of the days in the rotation.
+
+## Common Patterns
 Our school uses an 6-Day (Elementary School) and 8-Day (Middle/High School) rotation schedule with an alternate, shortened time-table that is used on a Wednesdays. Our instructional days are Monday-Friday.
 
 The rotation schedule begins with a "Day 1" on the first day of school and continues N school-days before starting again. On Wednesdays we have an early dismissal that uses an "alternate" time-table with shorter blocks.
@@ -9,6 +12,9 @@ The rotation schedule begins with a "Day 1" on the first day of school and conti
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Weds: 21/08/17 | Thurs: 21/08/18 | Fri: 21/08/19 | Mon: 21/08/23 | Tues: 21/08/24 | Weds: 21/08/25 | Thurs: 21/08/26 | Fri: 21/08/27 | Mon: 21/08/30 |
 | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. |
+
+Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and Lunch. This script produces 13 calendar CSV files. Teachers can then import just the blocks that are relevant to their work (e.g. [A, B, D, F, H, Break 2, Flex] ). The Rotation_Day.csv includes "all day" events that indicate the rotation day as well as the N/Total school day.
+
 
 ## Use
 You will need the following:
