@@ -131,8 +131,11 @@ def csv_to_json(csv_file, output_file=None):
     # get a set of unique days
     days_set = set()
     for event in calendar_list:
-        days_set.add(event['DAY'])
-
+        if not event['DAY']:
+            continue
+        else:
+            days_set.add(event['DAY'])
+    
     # build an empty JSON structure for standard & alternate-day calendars
     calendar_json_dict = {'STANDARD': {}, 'ALTERNATE': {}}
     for key in calendar_json_dict:
@@ -143,14 +146,16 @@ def csv_to_json(csv_file, output_file=None):
     for event in calendar_list:
         if not event['SUBJECT']:
             continue
-
+        
         cal_type = 'STANDARD'
         try:
             if event['ALTERNATE'].lower() == 'true':
                 cal_type = 'ALTERNATE'
+        # handle missing "true/false"
         except AttributeError:
             pass
         calendar_json_dict[cal_type][event['DAY']].append(event)
+        
         
     try:
         calendar_json_file.parent.mkdir(exist_ok=True)
