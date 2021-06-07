@@ -13,24 +13,24 @@
             "DAY": "Day 1",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 1",
             "SUBJECT": "Block B",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 1",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -79,24 +79,24 @@
             "DAY": "Day 2",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 2",
             "SUBJECT": "Block F",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 2",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -145,24 +145,24 @@
             "DAY": "Day 3",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 3",
             "SUBJECT": "Block A",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 3",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -211,24 +211,24 @@
             "DAY": "Day 4",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 4",
             "SUBJECT": "Block E",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 4",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -277,24 +277,24 @@
             "DAY": "Day 5",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 5",
             "SUBJECT": "Block D",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 5",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -343,24 +343,24 @@
             "DAY": "Day 6",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 6",
             "SUBJECT": "Block H",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 6",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -409,24 +409,24 @@
             "DAY": "Day 7",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 7",
             "SUBJECT": "Block C",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 7",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -475,24 +475,24 @@
             "DAY": "Day 8",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 8",
             "SUBJECT": "Block G",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": ""
          },
          {
             "DAY": "Day 8",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
+            "SUBJECT": "Passing",
+            "START": "11:30",
             "END": "11:35",
-            "DURATION": "10",
+            "DURATION": "05",
             "ALTERNATE": ""
          },
          {
@@ -543,47 +543,47 @@
             "DAY": "Day 1",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 1",
             "SUBJECT": "Block B",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 1",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 1",
             "SUBJECT": "Block C",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 1",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 1",
             "SUBJECT": "Block D",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -601,47 +601,47 @@
             "DAY": "Day 2",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 2",
             "SUBJECT": "Block F",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 2",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 2",
             "SUBJECT": "Block G",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 2",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 2",
             "SUBJECT": "Block H",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -659,47 +659,47 @@
             "DAY": "Day 3",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 3",
             "SUBJECT": "Block A",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 3",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 3",
             "SUBJECT": "Block B",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 3",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 3",
             "SUBJECT": "Block C",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -717,47 +717,47 @@
             "DAY": "Day 4",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 4",
             "SUBJECT": "Block E",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 4",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 4",
             "SUBJECT": "Block F",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 4",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 4",
             "SUBJECT": "Block G",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -775,47 +775,47 @@
             "DAY": "Day 5",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 5",
             "SUBJECT": "Block D",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 5",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 5",
             "SUBJECT": "Block A",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 5",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 5",
             "SUBJECT": "Block B",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -833,47 +833,47 @@
             "DAY": "Day 6",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 6",
             "SUBJECT": "Block H",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 6",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 6",
             "SUBJECT": "Block E",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 6",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 6",
             "SUBJECT": "Block F",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -891,47 +891,47 @@
             "DAY": "Day 7",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 7",
             "SUBJECT": "Block C",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 7",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 7",
             "SUBJECT": "Block D",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 7",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 7",
             "SUBJECT": "Block A",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
@@ -949,47 +949,47 @@
             "DAY": "Day 8",
             "SUBJECT": "Break 1",
             "START": "9:50",
-            "END": "10:05",
-            "DURATION": "15",
+            "END": "10:10",
+            "DURATION": "20",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 8",
             "SUBJECT": "Block G",
-            "START": "10:05",
-            "END": "11:25",
+            "START": "10:10",
+            "END": "11:30",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 8",
-            "SUBJECT": "Break 2",
-            "START": "11:25",
-            "END": "11:30",
-            "DURATION": "5",
+            "SUBJECT": "Passing",
+            "START": "11:30",
+            "END": "11:35",
+            "DURATION": "05",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 8",
             "SUBJECT": "Block H",
-            "START": "11:30",
-            "END": "12:50",
+            "START": "11:35",
+            "END": "12:55",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 8",
             "SUBJECT": "Lunch",
-            "START": "12:50",
-            "END": "13:20",
+            "START": "12:55",
+            "END": "13:25",
             "DURATION": "30",
             "ALTERNATE": "TRUE"
          },
          {
             "DAY": "Day 8",
             "SUBJECT": "Block E",
-            "START": "13:20",
-            "END": "14:40",
+            "START": "13:25",
+            "END": "14:45",
             "DURATION": "80",
             "ALTERNATE": "TRUE"
          }
