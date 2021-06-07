@@ -14,8 +14,8 @@ import argparse
 import unicodedata
 import re
 
-from dateutil import rrule
-from datetime import datetime
+# from dateutil import rrule
+from datetime import datetime, timedelta
 
 
 
@@ -252,8 +252,13 @@ def set_school_days(start, end, non_instruction, dt_format):
     start_dt = datetime.strptime(start, dt_format)
     end_dt = datetime.strptime(end, dt_format)
     
+    delta = end_dt - start_dt
+    
+    all_days = [start_dt + timedelta(days=i) for i in range(delta.days + 1)]
+    
     school_days = []
-    for dt in rrule.rrule(rrule.DAILY, dtstart=start_dt, until=end_dt):
+#     for dt in rrule.rrule(rrule.DAILY, dtstart=start_dt, until=end_dt):
+    for dt in all_days:
         if dt not in non_instruction and datetime.weekday(dt) in range(0, 5):
             school_days.append(dt)
     return school_days
@@ -365,6 +370,8 @@ def main():
         alternate_day = WEEKDAYS[args.alternate_day.upper()]
     except AttributeError:
         alternate_day = None
+    except KeyError as e:
+        do_exit(f'Unknown alternate_day: "{args.alternate_day}"; known alternate days: {WEEKDAYS}', 1)
 
     output = Path(f'{args.output}/{schedule_file.stem}/').expanduser().resolve()
 
