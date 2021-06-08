@@ -1,0 +1,129 @@
+day,subject,start,end,duration,alternate
+Day 1,Block A,8:30,9:50,80,
+Day 1,Break 1,9:50,10:10,20,
+Day 1,Block B,10:10,11:30,80,
+Day 1,Passing,11:30,11:35,05,
+Day 1,Block C,11:35,12:55,80,
+Day 1,Lunch,12:55,13:40,45,
+Day 1,Flex,13:40,14:10,30,
+Day 1,Block D,14:10,15:30,80,
+Day 2,Block E,8:30,9:50,80,
+Day 2,Break 1,9:50,10:10,20,
+Day 2,Block F,10:10,11:30,80,
+Day 2,Passing,11:30,11:35,05,
+Day 2,Block G,11:35,12:55,80,
+Day 2,Lunch,12:55,13:40,45,
+Day 2,Flex,13:40,14:10,30,
+Day 2,Block H,14:10,15:30,80,
+Day 3,Block D,8:30,9:50,80,
+Day 3,Break 1,9:50,10:10,20,
+Day 3,Block A,10:10,11:30,80,
+Day 3,Passing,11:30,11:35,05,
+Day 3,Block B,11:35,12:55,80,
+Day 3,Lunch,12:55,13:40,45,
+Day 3,Flex,13:40,14:10,30,
+Day 3,Block C,14:10,15:30,80,
+Day 4,Block H,8:30,9:50,80,
+Day 4,Break 1,9:50,10:10,20,
+Day 4,Block E,10:10,11:30,80,
+Day 4,Passing,11:30,11:35,05,
+Day 4,Block F,11:35,12:55,80,
+Day 4,Lunch,12:55,13:40,45,
+Day 4,Flex,13:40,14:10,30,
+Day 4,Block G,14:10,15:30,80,
+Day 5,Block C,8:30,9:50,80,
+Day 5,Break 1,9:50,10:10,20,
+Day 5,Block D,10:10,11:30,80,
+Day 5,Passing,11:30,11:35,05,
+Day 5,Block A,11:35,12:55,80,
+Day 5,Lunch,12:55,13:40,45,
+Day 5,Flex,13:40,14:10,30,
+Day 5,Block B,14:10,15:30,80,
+Day 6,Block G,8:30,9:50,80,
+Day 6,Break 1,9:50,10:10,20,
+Day 6,Block H,10:10,11:30,80,
+Day 6,Passing,11:30,11:35,05,
+Day 6,Block E,11:35,12:55,80,
+Day 6,Lunch,12:55,13:40,45,
+Day 6,Flex,13:40,14:10,30,
+Day 6,Block F,14:10,15:30,80,
+Day 7,Block B,8:30,9:50,80,
+Day 7,Break 1,9:50,10:10,20,
+Day 7,Block C,10:10,11:30,80,
+Day 7,Passing,11:30,11:35,05,
+Day 7,Block D,11:35,12:55,80,
+Day 7,Lunch,12:55,13:40,45,
+Day 7,Flex,13:40,14:10,30,
+Day 7,Block A,14:10,15:30,80,
+Day 8,Block F,8:30,9:50,80,
+Day 8,Break 1,9:50,10:10,20,
+Day 8,Block G,10:10,11:30,80,
+Day 8,Passing,11:30,11:35,05,
+Day 8,Block H,11:35,12:55,80,
+Day 8,Lunch,12:55,13:40,45,
+Day 8,Flex,13:40,14:10,30,
+Day 8,Block E,14:10,15:30,80,
+Day 1,Block A,8:30,9:50,80,TRUE
+Day 1,Break 1,9:50,10:10,20,TRUE
+Day 1,Block B,10:10,11:30,80,TRUE
+Day 1,Passing,11:30,11:35,05,TRUE
+Day 1,Block C,11:35,12:55,80,TRUE
+Day 1,Lunch,12:55,13:25,30,TRUE
+,,,,,
+Day 1,Block D,13:25,14:45,80,TRUE
+Day 2,Block E,8:30,9:50,80,TRUE
+Day 2,Break 1,9:50,10:10,20,TRUE
+Day 2,Block F,10:10,11:30,80,TRUE
+Day 2,Passing,11:30,11:35,05,TRUE
+Day 2,Block G,11:35,12:55,80,TRUE
+Day 2,Lunch,12:55,13:25,30,TRUE
+Day 2,,,,00,TRUE
+Day 2,Block H,13:25,14:45,80,TRUE
+Day 3,Block D,8:30,9:50,80,TRUE
+Day 3,Break 1,9:50,10:10,20,TRUE
+Day 3,Block A,10:10,11:30,80,TRUE
+Day 3,Passing,11:30,11:35,05,TRUE
+Day 3,Block B,11:35,12:55,80,TRUE
+Day 3,Lunch,12:55,13:25,30,TRUE
+Day 3,,,,00,TRUE
+Day 3,Block C,13:25,14:45,80,TRUE
+Day 4,Block H,8:30,9:50,80,TRUE
+Day 4,Break 1,9:50,10:10,20,TRUE
+Day 4,Block E,10:10,11:30,80,TRUE
+Day 4,Passing,11:30,11:35,05,TRUE
+Day 4,Block F,11:35,12:55,80,TRUE
+Day 4,Lunch,12:55,13:25,30,TRUE
+Day 4,,,,00,TRUE
+Day 4,Block G,13:25,14:45,80,TRUE
+Day 5,Block C,8:30,9:50,80,TRUE
+Day 5,Break 1,9:50,10:10,20,TRUE
+Day 5,Block D,10:10,11:30,80,TRUE
+Day 5,Passing,11:30,11:35,05,TRUE
+Day 5,Block A,11:35,12:55,80,TRUE
+Day 5,Lunch,12:55,13:25,30,TRUE
+Day 5,,,,00,TRUE
+Day 5,Block B,13:25,14:45,80,TRUE
+Day 6,Block G,8:30,9:50,80,TRUE
+Day 6,Break 1,9:50,10:10,20,TRUE
+Day 6,Block H,10:10,11:30,80,TRUE
+Day 6,Passing,11:30,11:35,05,TRUE
+Day 6,Block E,11:35,12:55,80,TRUE
+Day 6,Lunch,12:55,13:25,30,TRUE
+Day 6,,,,00,TRUE
+Day 6,Block F,13:25,14:45,80,TRUE
+Day 7,Block B,8:30,9:50,80,TRUE
+Day 7,Break 1,9:50,10:10,20,TRUE
+Day 7,Block C,10:10,11:30,80,TRUE
+Day 7,Passing,11:30,11:35,05,TRUE
+Day 7,Block D,11:35,12:55,80,TRUE
+Day 7,Lunch,12:55,13:25,30,TRUE
+Day 7,,,,00,TRUE
+Day 7,Block A,13:25,14:45,80,TRUE
+Day 8,Block F,8:30,9:50,80,TRUE
+Day 8,Break 1,9:50,10:10,20,TRUE
+Day 8,Block G,10:10,11:30,80,TRUE
+Day 8,Passing,11:30,11:35,05,TRUE
+Day 8,Block H,11:35,12:55,80,TRUE
+Day 8,Lunch,12:55,13:25,30,TRUE
+Day 8,,,,00,TRUE
+Day 8,Block E,13:25,14:45,80,TRUE
