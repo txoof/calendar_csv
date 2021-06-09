@@ -3,7 +3,11 @@
 # combine selected items into one master csv
 
 if [ "$1" == "" ]; then
-  echo "help goes here"
+  echo "Combine multiple CSV files into one preserving the header of the first file"
+  echo "Output file is created in the same directory as the first file"
+  echo " "
+  echo "Use: "
+  echo "$0 file1.csv file2.csv file3.csv pattern*.csv"
   exit 0
 fi
 
