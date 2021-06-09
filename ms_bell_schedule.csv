@@ -1,0 +1,194 @@
+day,subject,start,end,duration,alternate
+Day 1,Block A,8:30,9:45,75,
+Day 1,Break 1,9:45,9:55,10,
+Day 1,Passing,9:55,10:00,05,
+Day 1,Block B,10:00,11:15,75,
+Day 1,Lunch,11:15,12:05,50,
+Day 1,Passing,12:05,12:10,05,
+Day 1,Advisory/Flex,12:10,12:40,30,
+Day 1,Passing,12:40,12:45,05,
+Day 1,Block C,12:45,14:00,75,
+Day 1,Break 2,14:00,14:10,10,
+Day 1,Passing,14:10,14:15,05,
+Day 1,Block D,14:15,15:30,75,
+Day 2,Block E,8:30,9:45,75,
+Day 2,Break 1,9:45,9:55,10,
+Day 2,Passing,9:55,10:00,05,
+Day 2,Block F,10:00,11:15,75,
+Day 2,Lunch,11:15,12:05,50,
+Day 2,Passing,12:05,12:10,05,
+Day 2,Advisory/Flex,12:10,12:40,30,
+Day 2,Passing,12:40,12:45,05,
+Day 2,Block G,12:45,14:00,75,
+Day 2,Break 2,14:00,14:10,10,
+Day 2,Passing,14:10,14:15,05,
+Day 2,Block H,14:15,15:30,75,
+Day 3,Block D,8:30,9:45,75,
+Day 3,Break 1,9:45,9:55,10,
+Day 3,Passing,9:55,10:00,05,
+Day 3,Block A,10:00,11:15,75,
+Day 3,Lunch,11:15,12:05,50,
+Day 3,Passing,12:05,12:10,05,
+Day 3,Advisory/Flex,12:10,12:40,30,
+Day 3,Passing,12:40,12:45,05,
+Day 3,Block B,12:45,14:00,75,
+Day 3,Break 2,14:00,14:10,10,
+Day 3,Passing,14:10,14:15,05,
+Day 3,Block C,14:15,15:30,75,
+Day 4,Block H,8:30,9:45,75,
+Day 4,Break 1,9:45,9:55,10,
+Day 4,Passing,9:55,10:00,05,
+Day 4,Block E,10:00,11:15,75,
+Day 4,Lunch,11:15,12:05,50,
+Day 4,Passing,12:05,12:10,05,
+Day 4,Advisory/Flex,12:10,12:40,30,
+Day 4,Passing,12:40,12:45,05,
+Day 4,Block F,12:45,14:00,75,
+Day 4,Break 2,14:00,14:10,10,
+Day 4,Passing,14:10,14:15,05,
+Day 4,Block G,14:15,15:30,75,
+Day 5,Block C,8:30,9:45,75,
+Day 5,Break 1,9:45,9:55,10,
+Day 5,Passing,9:55,10:00,05,
+Day 5,Block D,10:00,11:15,75,
+Day 5,Lunch,11:15,12:05,50,
+Day 5,Passing,12:05,12:10,05,
+Day 5,Advisory/Flex,12:10,12:40,30,
+Day 5,Passing,12:40,12:45,05,
+Day 5,Block A,12:45,14:00,75,
+Day 5,Break 2,14:00,14:10,10,
+Day 5,Passing,14:10,14:15,05,
+Day 5,Block B,14:15,15:30,75,
+Day 6,Block G,8:30,9:45,75,
+Day 6,Break 1,9:45,9:55,10,
+Day 6,Passing,9:55,10:00,05,
+Day 6,Block H,10:00,11:15,75,
+Day 6,Lunch,11:15,12:05,50,
+Day 6,Passing,12:05,12:10,05,
+Day 6,Advisory/Flex,12:10,12:40,30,
+Day 6,Passing,12:40,12:45,05,
+Day 6,Block E,12:45,14:00,75,
+Day 6,Break 2,14:00,14:10,10,
+Day 6,Passing,14:10,14:15,05,
+Day 6,Block F,14:15,15:30,75,
+Day 7,Block B,8:30,9:45,75,
+Day 7,Break 1,9:45,9:55,10,
+Day 7,Passing,9:55,10:00,05,
+Day 7,Block C,10:00,11:15,75,
+Day 7,Lunch,11:15,12:05,50,
+Day 7,Passing,12:05,12:10,05,
+Day 7,Advisory/Flex,12:10,12:40,30,
+Day 7,Passing,12:40,12:45,05,
+Day 7,Block D,12:45,14:00,75,
+Day 7,Break 2,14:00,14:10,10,
+Day 7,Passing,14:10,14:15,05,
+Day 7,Block A,14:15,15:30,75,
+Day 8,Block F,8:30,9:45,75,
+Day 8,Break 1,9:45,9:55,10,
+Day 8,Passing,9:55,10:00,05,
+Day 8,Block G,10:00,11:15,75,
+Day 8,Lunch,11:15,12:05,50,
+Day 8,Passing,12:05,12:10,05,
+Day 8,Advisory/Flex,12:10,12:40,30,
+Day 8,Passing,12:40,12:45,05,
+Day 8,Block H,12:45,14:00,75,
+Day 8,Break 2,14:00,14:10,10,
+Day 8,Passing,14:10,14:15,05,
+Day 8,Block E,14:15,15:30,75,
+,,,,,
+Day 1,Block A,8:30,9:35,65,TRUE
+Day 1,Break 1,9:35,9:45,10,TRUE
+Day 1,Passing,9:45,9:50,05,TRUE
+Day 1,Block B,9:50,10:55,65,TRUE
+Day 1,Lunch,10:55,11:35,40,TRUE
+Day 1,Passing,11:35,11:40,05,TRUE
+Day 1,Advisory,11:40,12:25,45,TRUE
+Day 1,Passing,12:25,12:30,05,TRUE
+Day 1,Block C,12:30,13:35,65,TRUE
+,,,,,
+Day 1,Passing,13:35,13:40,05,TRUE
+Day 1,Block D,13:40,14:45,65,TRUE
+Day 2,Block E,8:30,9:35,65,TRUE
+Day 2,Break 1,9:35,9:45,10,TRUE
+Day 2,Passing,9:45,9:50,05,TRUE
+Day 2,Block F,9:50,10:55,65,TRUE
+Day 2,Lunch,10:55,11:35,40,TRUE
+Day 2,Passing,11:35,11:40,05,TRUE
+Day 2,Advisory,11:40,12:25,45,TRUE
+Day 2,Passing,12:25,12:30,05,TRUE
+Day 2,Block G,12:30,13:35,65,TRUE
+Day 2,,,,,TRUE
+Day 2,Passing,13:35,13:40,05,TRUE
+Day 2,Block H,13:40,14:45,65,TRUE
+Day 3,Block D,8:30,9:35,65,TRUE
+Day 3,Break 1,9:35,9:45,10,TRUE
+Day 3,Passing,9:45,9:50,05,TRUE
+Day 3,Block A,9:50,10:55,65,TRUE
+Day 3,Lunch,10:55,11:35,40,TRUE
+Day 3,Passing,11:35,11:40,05,TRUE
+Day 3,Advisory,11:40,12:25,45,TRUE
+Day 3,Passing,12:25,12:30,05,TRUE
+Day 3,Block B,12:30,13:35,65,TRUE
+Day 3,,,,,TRUE
+Day 3,Passing,13:35,13:40,05,TRUE
+Day 3,Block C,13:40,14:45,65,TRUE
+Day 4,Block H,8:30,9:35,65,TRUE
+Day 4,Break 1,9:35,9:45,10,TRUE
+Day 4,Passing,9:45,9:50,05,TRUE
+Day 4,Block E,9:50,10:55,65,TRUE
+Day 4,Lunch,10:55,11:35,40,TRUE
+Day 4,Passing,11:35,11:40,05,TRUE
+Day 4,Advisory,11:40,12:25,45,TRUE
+Day 4,Passing,12:25,12:30,05,TRUE
+Day 4,Block F,12:30,13:35,65,TRUE
+Day 4,,,,,TRUE
+Day 4,Passing,13:35,13:40,05,TRUE
+Day 4,Block G,13:40,14:45,65,TRUE
+Day 5,Block C,8:30,9:35,65,TRUE
+Day 5,Break 1,9:35,9:45,10,TRUE
+Day 5,Passing,9:45,9:50,05,TRUE
+Day 5,Block D,9:50,10:55,65,TRUE
+Day 5,Lunch,10:55,11:35,40,TRUE
+Day 5,Passing,11:35,11:40,05,TRUE
+Day 5,Advisory,11:40,12:25,45,TRUE
+Day 5,Passing,12:25,12:30,05,TRUE
+Day 5,Block A,12:30,13:35,65,TRUE
+Day 5,,,,,TRUE
+Day 5,Passing,13:35,13:40,05,TRUE
+Day 5,Block B,13:40,14:45,65,TRUE
+Day 6,Block G,8:30,9:35,65,TRUE
+Day 6,Break 1,9:35,9:45,10,TRUE
+Day 6,Passing,9:45,9:50,05,TRUE
+Day 6,Block H,9:50,10:55,65,TRUE
+Day 6,Lunch,10:55,11:35,40,TRUE
+Day 6,Passing,11:35,11:40,05,TRUE
+Day 6,Advisory,11:40,12:25,45,TRUE
+Day 6,Passing,12:25,12:30,05,TRUE
+Day 6,Block E,12:30,13:35,65,TRUE
+Day 6,,,,,TRUE
+Day 6,Passing,13:35,13:40,05,TRUE
+Day 6,Block F,13:40,14:45,65,TRUE
+Day 7,Block B,8:30,9:35,65,TRUE
+Day 7,Break 1,9:35,9:45,10,TRUE
+Day 7,Passing,9:45,9:50,05,TRUE
+Day 7,Block C,9:50,10:55,65,TRUE
+Day 7,Lunch,10:55,11:35,40,TRUE
+Day 7,Passing,11:35,11:40,05,TRUE
+Day 7,Advisory,11:40,12:25,45,TRUE
+Day 7,Passing,12:25,12:30,05,TRUE
+Day 7,Block D,12:30,13:35,65,TRUE
+Day 7,,,,,TRUE
+Day 7,Passing,13:35,13:40,05,TRUE
+Day 7,Block A,13:40,14:45,65,TRUE
+Day 8,Block F,8:30,9:35,65,TRUE
+Day 8,Break 1,9:35,9:45,10,TRUE
+Day 8,Passing,9:45,9:50,05,TRUE
+Day 8,Block G,9:50,10:55,65,TRUE
+Day 8,Lunch,10:55,11:35,40,TRUE
+Day 8,Passing,11:35,11:40,05,TRUE
+Day 8,Advisory,11:40,12:25,45,TRUE
+Day 8,Passing,12:25,12:30,05,TRUE
+Day 8,Block H,12:30,13:35,65,TRUE
+Day 8,,,,,TRUE
+Day 8,Passing,13:35,13:40,05,TRUE
+Day 8,Block E,13:40,14:45,65,TRUE
