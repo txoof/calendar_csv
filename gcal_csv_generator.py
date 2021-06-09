@@ -328,17 +328,19 @@ def get_args():
 
 
 # import sys
-# # sys.argv = sys.argv[0:3]
-# sys.argv = ['foo.py', 'process']
+# sys.argv = sys.argv[0:1]
+# sys.argv.extend(['process'])
+# # sys.argv = ['foo.py', 'process']
 # # # sys.argv.extend(['--convert', './2021_2022_hs.csv'])
 # # # sys.argv.extend(['--convert', './ue.csv'])
 # # # sys.argv.extend(['-h'])
 
 # sys.argv.extend(['--start', '2021/08/18', '--end', '2022/06/17'])
-# sys.argv.extend(['--non_instruction', './hs_non_instruction_2021-2022.txt'])
-# # sys.argv.extend(['--alternate_day', 'Wednesday'])
+# sys.argv.extend(['--non_instruction', './non_instruction_sample.txt'])
+# sys.argv.extend(['--alternate_day', 'Wednesday'])
 # # sys.argv.extend(['-c', '/Users/aciuffo/Desktop/foo/2021_2022_hs.json'])
-# sys.argv.extend(['--schedule_file', './ue.json'])
+# sys.argv.extend(['--schedule_file', './ms_bell_schedule.json'])
+# # sys.argv.extend(['--schedule_file', './ue.json'])
 # # sys.argv.extend(['--output', '~/Desktop'])
 
 
@@ -452,7 +454,6 @@ def main():
                               'END TIME': event['END'],
                               'SUBJECT': event['SUBJECT'],
                              })
-
     try:
         output.mkdir(parents='ok', exist_ok=True)
     except OSError as e:
@@ -473,12 +474,5 @@ def main():
 
 if __name__ == '__main__':
     q = main()
-
-
-
-
-
-
-
 
 
