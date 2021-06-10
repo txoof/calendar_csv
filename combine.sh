@@ -12,7 +12,7 @@ if [ "$1" == "" ]; then
 fi
 
 FIRST=1
-OUTPATH=$(dirname $1)
+OUTPATH=$(dirname "$1")
 TIME=$(date +%Y%m%d_%H%M)
 OUTPUT=$OUTPATH/all_combined-$TIME.csv
 
@@ -20,9 +20,9 @@ for var in "$@"
 do
   if [ $FIRST -gt 0 ]; then
     FIRST=0
-    cat $var > $OUTPUT
+    cat $var > "$OUTPUT"
   else
-    tail -n+2 $var >> $OUTPUT
+    tail -n+2 $var >> "$OUTPUT"
   fi
   echo "added $var to $OUTPUT"
 done
