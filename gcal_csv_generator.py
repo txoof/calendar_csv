@@ -81,9 +81,6 @@ def slugify(value, allow_unicode=False):
 def csv_to_json(csv_file):
     '''convert csv_file schedule to JSON
     
-    Outputs a JSON compliant file with the same name as the input file
-    at the specified location
-    
     csv_format:
     DAY, SUBJECT, START, END, ALTERNATE
     Day 1, Block A, 12:05, 14:25, FALSE
@@ -94,7 +91,7 @@ def csv_to_json(csv_file):
         output_path(`str`): path to output file
     
     Returns:
-        str: full path to output file
+        JSON compliant dict
     '''
     calendar_csv_file = Path(csv_file).expanduser().resolve()
         
@@ -103,21 +100,28 @@ def csv_to_json(csv_file):
 #     else:
 #         calendar_json_file = Path(f'{calendar_csv_file.parent}/{calendar_csv_file.stem}.json')
     
-    calendar_list = []
+    raw_calendar_list = []
     try:
         with open(calendar_csv_file, 'r') as csvfile:
             for line in csv.DictReader(csvfile):
-                calendar_list.append(line)
+                raw_calendar_list.append(line)
     except OSError as e:
         do_exit(f'Could not open csv file due to error: {e}', 1)
+    
+    # strip whitespace
+    calendar_list = []
+    for row in raw_calendar_list:
+        row_stripped = {}
+        for key, value in row.items():
+            row_stripped[key.strip()] = value.strip()
+        calendar_list.append(row_stripped)        
         
-
     # sanitize keys into upper case
     calendar_list_temp = []
     for event in calendar_list:
         temp_dict = {}
         for key, value in event.items():
-            temp_dict[str(key).upper()] = value
+            temp_dict[str(key).upper().strip()] = value
         calendar_list_temp.append(temp_dict)
     calendar_list = calendar_list_temp
     
@@ -322,7 +326,7 @@ def get_args():
 # sys.argv.extend(['--non_instruction', './non_instruction_sample.txt'])
 # sys.argv.extend(['--alternate_day', 'Wednesday'])
 # # sys.argv.extend(['-c', '/Users/aciuffo/Desktop/foo/2021_2022_hs.json'])
-# sys.argv.extend(['--schedule_file', './ms_bell_schedule.csv'])
+# sys.argv.extend(['--schedule_file', './hs_bell_schedule.csv'])
 # # sys.argv.extend(['--schedule_file', './ue.json'])
 # # sys.argv.extend(['--output', '~/Desktop'])
 
