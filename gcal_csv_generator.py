@@ -22,22 +22,11 @@ from datetime import datetime, timedelta
 
 
 
-def do_exit(msg=None, value=0):
-    if value > 0:
-        print('EXIT DUE TO ERROR:')
-    else:
-        print('DONE')
-    if msg:
-        print(f'\t{msg}')
-    
-    sys.exit(0)
+# Constants
 
-
-
-
-
-
+# expected headers in schedule CSV files
 CSV_HEADERS = ['DAY', 'SUBJECT', 'START', 'END', 'ALTERNATE']
+# Weekday names (in english)
 WEEKDAYS = {
     'MONDAY': 0,
     'TUESDAY': 1,
@@ -47,6 +36,21 @@ WEEKDAYS = {
     'SATURDAY': 5,
     'SUNDAY': 6
 }
+
+
+
+
+
+
+def do_exit(msg=None, value=0):
+    if value > 0:
+        print('EXIT DUE TO ERROR:')
+    else:
+        print('DONE')
+    if msg:
+        print(f'\t{msg}')
+    
+    sys.exit(0)
 
 
 
@@ -74,7 +78,7 @@ def slugify(value, allow_unicode=False):
 
 
 
-def csv_to_json(csv_file, output_file=None):
+def csv_to_json(csv_file):
     '''convert csv_file schedule to JSON
     
     Outputs a JSON compliant file with the same name as the input file
@@ -93,10 +97,11 @@ def csv_to_json(csv_file, output_file=None):
         str: full path to output file
     '''
     calendar_csv_file = Path(csv_file).expanduser().resolve()
-    if output_file:
-        calendar_json_file = Path(output_file).expanduser().resolve()
-    else:
-        calendar_json_file = Path(f'{calendar_csv_file.parent}/{calendar_csv_file.stem}.json')
+        
+#     if output_file:
+#         calendar_json_file = Path(output_file).expanduser().resolve()
+#     else:
+#         calendar_json_file = Path(f'{calendar_csv_file.parent}/{calendar_csv_file.stem}.json')
     
     calendar_list = []
     try:
@@ -156,18 +161,18 @@ def csv_to_json(csv_file, output_file=None):
             pass
         calendar_json_dict[cal_type][event['DAY']].append(event)
         
-        
-    try:
-        calendar_json_file.parent.mkdir(exist_ok=True)
-    except OSError as e:
-        do_exit(f'cannot write JSON output file at location: {calendar_json_file.parent}: {e}', 1)
+    return calendar_json_dict
+#     try:
+#         calendar_json_file.parent.mkdir(exist_ok=True)
+#     except OSError as e:
+#         do_exit(f'cannot write JSON output file at location: {calendar_json_file.parent}: {e}', 1)
    
-    try:
-        with open(calendar_json_file, 'w') as json_out:
-            json.dump(calendar_json_dict, json_out, indent=3)
-    except OSError as e:
-        do_exit(f'cannot write JSON output file at location: {calendar_json_file.parent}: {e}', 1)
-    return calendar_json_file
+#     try:
+#         with open(calendar_json_file, 'w') as json_out:
+#             json.dump(calendar_json_dict, json_out, indent=3)
+#     except OSError as e:
+#         do_exit(f'cannot write JSON output file at location: {calendar_json_file.parent}: {e}', 1)
+#     return calendar_json_file
 
 
 
@@ -219,29 +224,6 @@ def read_non_instruction(file, dt_format):
 
 
 
-def read_json_schedule(file):
-    '''read json formatted schedule file
-    
-    Args:
-        file('str'): path to file
-        
-        
-    Returns:
-        `dict`'''
-    
-    try:
-        with open(file, 'r') as json_file:
-            json_data = json.load(json_file)
-    except Exception as e:
-        do_exit(f'failed to read json file "{file}": {e}', 1)
-        
-    return json_data
-
-
-
-
-
-
 def set_school_days(start, end, non_instruction, dt_format):
     '''create a list of school days excluding non-instructional and weekends
     
@@ -277,47 +259,47 @@ def get_args():
     # need to adjust how parsers are added to require one of the two sub parsers
     # https://stackoverflow.com/questions/23349349/argparse-with-required-subparser
     parser = argparse.ArgumentParser()
-    subparsers = parser.add_subparsers(help='help for subcommand', dest='convert | process')
-    subparsers.required = True
+#     subparsers = parser.add_subparsers(help='help for subcommand', dest='convert | parser')
+#     subparsers.required = True
     
-    convert = subparsers.add_parser('convert', help='convert a csv to json')
-    convert.add_argument('convert',
-                        help=f'Convert schedule CSV into JSON file; required headers: "{CSV_HEADERS}"',
-                        metavar='/file/to/convert.csv')
+#     convert = subparsers.add_parser('convert', help='convert a csv to json')
+#     convert.add_argument('convert',
+#                         help=f'Convert schedule CSV into JSON file; required headers: "{CSV_HEADERS}"',
+#                         metavar='/file/to/convert.csv')
     
-    process = subparsers.add_parser('process', help='process schedule file')
+#     parser = subparsers.add_parser('parser', help='parser schedule file')
         
     
-    process.add_argument('--schedule_file', '-c', default=None,
+    parser.add_argument('--schedule_file', '-c', default=None,
                         help='file containing JSON schedule data',
                         metavar='/schedule/file.json',
                         required=True)    
 
-    process.add_argument('--start', '-s', default=None,
+    parser.add_argument('--start', '-s', default=None,
                         help='First day of classes in YYYY/MM/DD format', 
                         metavar='"YYYY/MM/DD"',
                         required=True)
     
-    process.add_argument('--end', '-e', default=None,
+    parser.add_argument('--end', '-e', default=None,
                        help='Last day of classes in YYYY/MM/DD format',
                        metavar = '"YYYY/MM/DD"',
                        required=True)
     
-    process.add_argument('--non_instruction', '-n', default=None,
+    parser.add_argument('--non_instruction', '-n', default=None,
                        help='File containing non-instructional days between start and end date, one per line matching the daytime format (YYYY/MM/DD)',
                        metavar='/path/to/non_instruction.txt',
                        required=True)    
     
-    process.add_argument('--date_format', '-d', default='%Y/%m/%d',
+    parser.add_argument('--date_format', '-d', default='%Y/%m/%d',
                        help='datetime format see: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior',
                        metavar='"%Y/%m/%d"', required=False)
     
     
-    process.add_argument('--alternate_day', '-a', default=None,
+    parser.add_argument('--alternate_day', '-a', default=None,
                        help='single day to use "alternate" schedule specified in the schedule file', 
                        metavar="Wednesday")
         
-    process.add_argument('--output', '-o', default='~/Desktop',
+    parser.add_argument('--output', '-o', default='~/Desktop',
                        help='Folder to use for output of CSV Schedules (default is ~/Desktop)',
                        metavar='/output/location/')    
     return parser.parse_known_args()
@@ -327,9 +309,10 @@ def get_args():
 
 
 
+# ### TESTING 
 # import sys
 # sys.argv = sys.argv[0:1]
-# sys.argv.extend(['process'])
+# # sys.argv.extend(['process'])
 # # sys.argv = ['foo.py', 'process']
 # # # sys.argv.extend(['--convert', './2021_2022_hs.csv'])
 # # # sys.argv.extend(['--convert', './ue.csv'])
@@ -339,7 +322,7 @@ def get_args():
 # sys.argv.extend(['--non_instruction', './non_instruction_sample.txt'])
 # sys.argv.extend(['--alternate_day', 'Wednesday'])
 # # sys.argv.extend(['-c', '/Users/aciuffo/Desktop/foo/2021_2022_hs.json'])
-# sys.argv.extend(['--schedule_file', './ms_bell_schedule.json'])
+# sys.argv.extend(['--schedule_file', './ms_bell_schedule.csv'])
 # # sys.argv.extend(['--schedule_file', './ue.json'])
 # # sys.argv.extend(['--output', '~/Desktop'])
 
@@ -352,15 +335,15 @@ def main():
     args, unknown_args = get_args()
 
     # run conversion and exit
-    if hasattr(args, 'convert'):
+#     if hasattr(args, 'convert'):
 
-        conversion_file = Path(args.convert).expanduser().resolve()
-        print(f'converting file: "{conversion_file}"')
-        json_output = Path(f"{conversion_file.parent}/{conversion_file.stem}.json")
-        csv_to_json(conversion_file, json_output)
-        print(f'wrote: {json_output}')
-        # bail out after conversion
-        do_exit()
+#         conversion_file = Path(args.convert).expanduser().resolve()
+#         print(f'converting file: "{conversion_file}"')
+#         json_output = Path(f"{conversion_file.parent}/{conversion_file.stem}.json")
+#         csv_to_json(conversion_file, json_output)
+#         print(f'wrote: {json_output}')
+#         # bail out after conversion
+#         do_exit()
     
     non_inst_file = Path(args.non_instruction).expanduser().resolve()
     dt_format = args.date_format
@@ -370,8 +353,10 @@ def main():
     end = args.end
 
     schedule_file = Path(args.schedule_file).expanduser().resolve()
+    
+    schedule_json = csv_to_json(schedule_file)
 
-    schedule_json = read_json_schedule(schedule_file)
+#     schedule_json = read_json_schedule(schedule_file)
 
     try:
         alternate_day = WEEKDAYS[args.alternate_day.upper()]
@@ -474,5 +459,12 @@ def main():
 
 if __name__ == '__main__':
     q = main()
+
+
+
+
+
+
+# 
 
 
