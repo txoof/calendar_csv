@@ -39,7 +39,7 @@ You will need the following:
 
 ### Creating a CSV file
 
-To create a JSON file, use the sample [CSV template](./sample.csv) provided.
+To create a CSV file, use the sample [CSV template](./sample.csv) provided.
 
 See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an alternate shortened schedule. The [ES Sample](./es_sample.csv) shows a 6 day rotation with no alternate wednesday schedule.
 
@@ -56,7 +56,7 @@ See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an 
 
 ```bash
 gcal_csv_generator.py process [-h] 
-     --schedule_file /schedule/file.json
+     --schedule_file /schedule/school_schedule_file.csv
      --start "YYYY/MM/DD" 
      --end "YYYY/MM/DD"
      --non_instruction /path/to/non_instruction.txt
