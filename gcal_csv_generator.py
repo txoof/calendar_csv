@@ -275,8 +275,8 @@ def get_args():
         
     
     parser.add_argument('--schedule_file', '-c', default=None,
-                        help='file containing JSON schedule data',
-                        metavar='/schedule/file.json',
+                        help='file containing CSV schedule data',
+                        metavar='/schedule/file.csv',
                         required=True)    
 
     parser.add_argument('--start', '-s', default=None,
@@ -307,28 +307,6 @@ def get_args():
                        help='Folder to use for output of CSV Schedules (default is ~/Desktop)',
                        metavar='/output/location/')    
     return parser.parse_known_args()
-
-
-
-
-
-
-# ### TESTING 
-# import sys
-# sys.argv = sys.argv[0:1]
-# # sys.argv.extend(['process'])
-# # sys.argv = ['foo.py', 'process']
-# # # sys.argv.extend(['--convert', './2021_2022_hs.csv'])
-# # # sys.argv.extend(['--convert', './ue.csv'])
-# # # sys.argv.extend(['-h'])
-
-# sys.argv.extend(['--start', '2021/08/18', '--end', '2022/06/17'])
-# sys.argv.extend(['--non_instruction', './non_instruction_sample.txt'])
-# sys.argv.extend(['--alternate_day', 'Wednesday'])
-# # sys.argv.extend(['-c', '/Users/aciuffo/Desktop/foo/2021_2022_hs.json'])
-# sys.argv.extend(['--schedule_file', './hs_bell_schedule.csv'])
-# # sys.argv.extend(['--schedule_file', './ue.json'])
-# # sys.argv.extend(['--output', '~/Desktop'])
 
 
 
@@ -463,12 +441,5 @@ def main():
 
 if __name__ == '__main__':
     q = main()
-
-
-
-
-
-
-# 
 
 
