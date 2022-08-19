@@ -32,10 +32,11 @@ Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and
 You will need the following:
 
 * Schedule file in [`.csv` format](./hs_sample.csv)
-* Non-instructional days -- any day that the rotation should "skip" such as holidays, parent-teacher conferences, PD Days, etc. Weekend days (Saturday & Sunday) are automatically skipped
-  * [Flat file with one day per line in YYYY/MM/DD format](./non_instruction_sample.txt)
+  * Blank lines are ignored
+* Non-instructional days [Flat file with one day per line in YYYY/MM/DD format](./non_instruction_sample.txt)
+  * Days that the rotation should "skip" such as holidays, parent-teacher conferences, PD Days, etc. Weekend days (Saturday & Sunday) are automatically skipped
 * First and Last date of the instructional term
-  * YYYY/MM/DD format
+  * `YYYY/MM/DD` format: `2022/08/29`
 
 ### Creating a CSV file
 
