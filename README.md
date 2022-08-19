@@ -54,21 +54,18 @@ See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an 
 
 ### Process a calendar file
 
+Example
+
 ```bash
-gcal_csv_generator.py process [-h] 
-     --schedule_file /schedule/school_schedule_file.csv
-     --start "YYYY/MM/DD" 
-     --end "YYYY/MM/DD"
-     --non_instruction /path/to/non_instruction.txt
-     [--date_format "%Y/%m/%d"]
-     [--alternate_day Wednesday]
-     [--output /output/location/]
+gcal_csv_generator.py process --schedule_file ./school_schedule_file.csv \
+--start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt \
+--alternate_day Wednesday
 ```
 
 ## Command Reference
 
 `--schedule_file/-c`:
-.json formatted schedule file (required)
+.csv formatted schedule file (required)
 
 `--start/-s`:
 First day of school in YYYY/MM/DD format (required)
