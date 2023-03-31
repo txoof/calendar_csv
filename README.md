@@ -8,10 +8,11 @@ If your schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven 
 
 - [Google Calendar CSV Generator](#google-calendar-csv-generator)
   - [Table of Contents](#table-of-contents)
-  - [Common Patterns & Use Case](#common-patterns--use-case)
+  - [Common Patterns \& Use Case](#common-patterns--use-case)
+  - [Getting Started](#getting-started)
   - [Use](#use)
     - [Creating a CSV file](#creating-a-csv-file)
-    - [Process a calendar file](#process-a-calendar-file)
+    - [Generate Calendar CSV Files](#generate-calendar-csv-files)
   - [Command Reference](#command-reference)
 
 ## Common Patterns & Use Case
@@ -25,15 +26,21 @@ The rotation schedule begins with a "Day 1" on the first day of school and conti
 | Weds: 21/08/17 | Thurs: 21/08/18 | Fri: 21/08/19 | Mon: 21/08/23 | Tues: 21/08/24 | Weds: 21/08/25 | Thurs: 21/08/26 | Fri: 21/08/27 | Mon: 21/08/30 |
 | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. |
 
-Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and Lunch. This script produces 13 calendar CSV files. Teachers can then import just the blocks that are relevant to their work (e.g. [A, B, D, F, H, Break 2, Flex] ). The Rotation_Day.csv includes "all day" events that indicate the rotation day as well as the N/Total school day.
+Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and Lunch. This script produces 14 calendar CSV files. Teachers can then import just the blocks that are relevant to their work (e.g. [A, B, D, F, H, Break 2, Flex] ). The Rotation_Day.csv includes "all day" events that indicate the rotation day as well as the N/Total school day.
 
+## Getting Started
+
+This program runs is a python script and runs from a terminal. To use this program, you can either clone it using git, or [download it as a .zip file](https://github.com/txoof/calendar_csv/archive/refs/heads/master.zip).
+
+Once you have a local copy, open a terminal and navigate to the downloaded program. Run the script using `python gcal_csv_generator.py -h` to see the help output. See the [Use](#use) section below for more detailed instructions.
 ## Use
 
 You will need the following:
 
 * Schedule file in [`.csv` format](./hs_sample.csv)
   * Blank lines are ignored
-* Non-instructional days [Flat file with one day per line in YYYY/MM/DD format](./non_instruction_sample.txt)
+* Non-instructional days file 
+  * [Flat file with one day per line in YYYY/MM/DD format](./non_instruction_sample.txt)
   * Days that the rotation should "skip" such as holidays, parent-teacher conferences, PD Days, etc. Weekend days (Saturday & Sunday) are automatically skipped
 * First and Last date of the instructional term
   * `YYYY/MM/DD` format: `2022/08/29`
@@ -53,12 +60,12 @@ See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an 
 * **`alternate`** this is an "alternate" schedule as boolean: (True/False/\<blank\>)
 * All other columns will be ignored
 
-### Process a calendar file
+### Generate Calendar CSV Files
 
 Example
 
 ```bash
-gcal_csv_generator.py process --schedule_file ./school_schedule_file.csv \
+gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv \
 --start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt \
 --alternate_day Wednesday
 ```
