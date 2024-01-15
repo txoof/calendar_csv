@@ -45,7 +45,7 @@ Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and
    - This will add "path" the program so you don't need to type it
 ![drag folder](Documentation/drag_folder.gif)
 1. Paste the following command into the terminal window and press enter. **NOTE:** you may need to change the file names and dates to match your files and dates before pressing `Enter` (`⏎` key).
-   - `gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv
+   - `./gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv
    --start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt --alternate_day Wednesday`
 8. CSV files will appear on your desktop in a folder
 
@@ -81,7 +81,7 @@ See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an 
 Example
 
 ```bash
-gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv \
+./gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv \
 --start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt \
 --alternate_day Wednesday
 ```
