@@ -10,6 +10,7 @@ If your schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven 
   - [Table of Contents](#table-of-contents)
   - [Common Patterns \& Use Case](#common-patterns--use-case)
   - [Getting Started](#getting-started)
+    - [Novice Instructions](#novice-instructions)
   - [Use](#use)
     - [Creating a CSV file](#creating-a-csv-file)
     - [Generate Calendar CSV Files](#generate-calendar-csv-files)
@@ -30,9 +31,24 @@ Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and
 
 ## Getting Started
 
-This program runs is a python script and runs from a terminal. To use this program, you can either clone it using git, or [download it as a .zip file](https://github.com/txoof/calendar_csv/archive/refs/heads/master.zip).
+### Novice Instructions
 
-Once you have a local copy, open a terminal and navigate to the downloaded program. Run the script using `python gcal_csv_generator.py -h` to see the help output. See the [Use](#use) section below for more detailed instructions.
+1. [Download this Zip File](https://github.com/txoof/calendar_csv/archive/refs/heads/master.zip)
+2. Unpack the zip file by double clicking on it in *Finder*
+3. Create (or update) the following files. It is easiest if the file names do **not** have any spaces.
+   - `bell_schedule.csv` - This file contains the bell schedule timing for each block (an example file is provided)
+   - `non_instruction.txt` - This file contains the dates in YYYY/MM/DD format that are considered "non instructional" such as conference days or PD days. 
+4. Run the *Terminal.app* application (found in the applications folder)
+![Terminal](./Documentation/terminal.png)
+1. Type `cd` followed by a space in the terminal window
+2. Click on the unzipped folder in Finder and drag it into the terminal window. Then press `Enter` (`⏎` key).
+   - This will add "path" the program so you don't need to type it
+![drag folder](Documentation/drag_folder.gif)
+1. Paste the following command into the terminal window and press enter. **NOTE:** you may need to change the file names and dates to match your files and dates before pressing `Enter` (`⏎` key).
+   - `gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv
+   --start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt --alternate_day Wednesday`
+8. CSV files will appear on your desktop in a folder
+
 ## Use
 
 You will need the following:
