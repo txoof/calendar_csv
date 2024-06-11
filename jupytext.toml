@@ -1,0 +1,2 @@
+formats = "ipynb,py:light"
+outdated_text_notebook_margin = 5
