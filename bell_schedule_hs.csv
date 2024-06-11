@@ -1,0 +1,129 @@
+day,subject,start,end,duration,alternate
+Day 1,Block A,8:30,9:55,85,
+Day 1,Break,9:55,10:15,20,
+Day 1,Block B,10:15,11:35,80,
+Day 1,Passing AM,11:35,11:40,5,
+Day 1,Flex,11:40,12:05,25,
+Day 1,Lunch,12:05,12:45,40,
+Day 1,Block C,12:45,14:05,80,
+Day 1,Passing PM,14:05,14:10,5,
+Day 1,Block D,14:10,15:30,80,
+Day 2,Block E,8:30,9:55,85,
+Day 2,Break,9:55,10:15,20,
+Day 2,Block F,10:15,11:35,80,
+Day 2,Passing AM,11:35,11:40,5,
+Day 2,Flex,11:40,12:05,25,
+Day 2,Lunch,12:05,12:45,40,
+Day 2,Block G,12:45,14:05,80,
+Day 2,Passing PM,14:05,14:10,5,
+Day 2,Block H,14:10,15:30,80,
+Day 3,Block B,8:30,9:55,85,
+Day 3,Break,9:55,10:15,20,
+Day 3,Block C,10:15,11:35,80,
+Day 3,Passing AM,11:35,11:40,5,
+Day 3,Flex,11:40,12:05,25,
+Day 3,Lunch,12:05,12:45,40,
+Day 3,Block D,12:45,14:05,80,
+Day 3,Passing PM,14:05,14:10,5,
+Day 3,Block A,14:10,15:30,80,
+Day 4,Block F,8:30,9:55,85,
+Day 4,Break,9:55,10:15,20,
+Day 4,Block G,10:15,11:35,80,
+Day 4,Passing AM,11:35,11:40,5,
+Day 4,Flex,11:40,12:05,25,
+Day 4,Lunch,12:05,12:45,40,
+Day 4,Block H,12:45,14:05,80,
+Day 4,Passing PM,14:05,14:10,5,
+Day 4,Block E,14:10,15:30,80,
+Day 5,Block C,8:30,9:55,85,
+Day 5,Break,9:55,10:15,20,
+Day 5,Block D,10:15,11:35,80,
+Day 5,Passing AM,11:35,11:40,5,
+Day 5,Flex,11:40,12:05,25,
+Day 5,Lunch,12:05,12:45,40,
+Day 5,Block A,12:45,14:05,80,
+Day 5,Passing PM,14:05,14:10,5,
+Day 5,Block B,14:10,15:30,80,
+Day 6,Block G,8:30,9:55,85,
+Day 6,Break,9:55,10:15,20,
+Day 6,Block H,10:15,11:35,80,
+Day 6,Passing AM,11:35,11:40,5,
+Day 6,Flex,11:40,12:05,25,
+Day 6,Lunch,12:05,12:45,40,
+Day 6,Block E,12:45,14:05,80,
+Day 6,Passing PM,14:05,14:10,5,
+Day 6,Block F,14:10,15:30,80,
+Day 7,Block D,8:30,9:55,85,
+Day 7,Break,9:55,10:15,20,
+Day 7,Block A,10:15,11:35,80,
+Day 7,Passing AM,11:35,11:40,5,
+Day 7,Flex,11:40,12:05,25,
+Day 7,Lunch,12:05,12:45,40,
+Day 7,Block B,12:45,14:05,80,
+Day 7,Passing PM,14:05,14:10,5,
+Day 7,Block C,14:10,15:30,80,
+Day 8,Block H,8:30,9:55,85,
+Day 8,Break,9:55,10:15,20,
+Day 8,Block E,10:15,11:35,80,
+Day 8,Passing AM,11:35,11:40,5,
+Day 8,Flex,11:40,12:05,25,
+Day 8,Lunch,12:05,12:45,40,
+Day 8,Block F,12:45,14:05,80,
+Day 8,Passing PM,14:05,14:10,5,
+Day 8,Block G,14:10,15:30,80,
+Day 1,Block A,8:30,9:50,80,TRUE
+Day 1,Break,9:50,10:05,15,TRUE
+Day 1,Block B,10:05,11:25,80,TRUE
+Day 1,Passing AM,11:25,11:30,5,TRUE
+Day 1,Block C,11:30,12:50,80,TRUE
+Day 1,Lunch,12:50,13:25,35,TRUE
+Day 1,Block D,13:25,14:45,80,TRUE
+Day 2,Block E,8:30,9:50,80,TRUE
+Day 2,Break,9:50,10:05,15,TRUE
+Day 2,Block F,10:05,11:25,80,TRUE
+Day 2,Passing AM,11:25,11:30,5,TRUE
+Day 2,Block G,11:30,12:50,80,TRUE
+Day 2,Lunch,12:50,13:25,35,TRUE
+Day 2,Block H,13:25,14:45,80,TRUE
+Day 3,Block B,8:30,9:50,80,TRUE
+Day 3,Break,9:50,10:05,15,TRUE
+Day 3,Block C,10:05,11:25,80,TRUE
+Day 3,Passing AM,11:25,11:30,5,TRUE
+Day 3,Block D,11:30,12:50,80,TRUE
+Day 3,Lunch,12:50,13:25,35,TRUE
+Day 3,Block A,13:25,14:45,80,TRUE
+Day 4,Block F,8:30,9:50,80,TRUE
+Day 4,Break,9:50,10:05,15,TRUE
+Day 4,Block G,10:05,11:25,80,TRUE
+Day 4,Passing AM,11:25,11:30,5,TRUE
+Day 4,Block H,11:30,12:50,80,TRUE
+Day 4,Lunch,12:50,13:25,35,TRUE
+Day 4,Block E,13:25,14:45,80,TRUE
+Day 5,Block C,8:30,9:50,80,TRUE
+Day 5,Break,9:50,10:05,15,TRUE
+Day 5,Block D,10:05,11:25,80,TRUE
+Day 5,Passing AM,11:25,11:30,5,TRUE
+Day 5,Block A,11:30,12:50,80,TRUE
+Day 5,Lunch,12:50,13:25,35,TRUE
+Day 5,Block B,13:25,14:45,80,TRUE
+Day 6,Block G,8:30,9:50,80,TRUE
+Day 6,Break,9:50,10:05,15,TRUE
+Day 6,Block H,10:05,11:25,80,TRUE
+Day 6,Passing AM,11:25,11:30,5,TRUE
+Day 6,Block E,11:30,12:50,80,TRUE
+Day 6,Lunch,12:50,13:25,35,TRUE
+Day 6,Block F,13:25,14:45,80,TRUE
+Day 7,Block D,8:30,9:50,80,TRUE
+Day 7,Break,9:50,10:05,15,TRUE
+Day 7,Block A,10:05,11:25,80,TRUE
+Day 7,Passing AM,11:25,11:30,5,TRUE
+Day 7,Block B,11:30,12:50,80,TRUE
+Day 7,Lunch,12:50,13:25,35,TRUE
+Day 7,Block C,13:25,14:45,80,TRUE
+Day 8,Block H,8:30,9:50,80,TRUE
+Day 8,Break,9:50,10:05,15,TRUE
+Day 8,Block E,10:05,11:25,80,TRUE
+Day 8,Passing AM,11:25,11:30,5,TRUE
+Day 8,Block F,11:30,12:50,80,TRUE
+Day 8,Lunch,12:50,13:25,35,TRUE
+Day 8,Block G,13:25,14:45,80,TRUE
