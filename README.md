@@ -4,6 +4,9 @@ Python script for generating files suitable for import into Google Calendar base
 
 For example, if your rotating schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven CSV files will be produced, one for each event in the rotation: e.g. Block A, Block B, Block C, lunch, breaks. Each file produced will contain all of the calendar events for all days that match that event.
 
+See the [Sample CSV](./sample_csv/) directory in this repository for an example of an 8-day rotation with blocks A, B, C, D, E, F, G, H, Lunch, Flex Time and Breaks and several other events. This example is based on the [HS Bell Schedule](./bell_schedule_hs.csv) included.
+
+
 ## Table of Contents <!-- omit from toc -->
 
 - [Google Calendar CSV Generator](#google-calendar-csv-generator)
@@ -12,6 +15,7 @@ For example, if your rotating schedule has "Block A, Block B, Block C, Lunch, Br
   - [Use](#use)
   - [Import CSV Files into Google Calendar](#import-csv-files-into-google-calendar)
   - [Command Reference](#command-reference)
+  - [Additional Tools](#additional-tools)
 
 ## Common Patterns & Use Case
 
@@ -167,3 +171,7 @@ options:
   --week_end Monday-Sunday
                         Last day of a typical school week (e.g. Friday). Default: Friday
 ```
+
+## Additional Tools
+
+Included in this repo is a script that will combine multiple CSV files into a single CSV to simplify uploading to Google Calendar. Try `./combine.sh` for usage information.
