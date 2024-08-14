@@ -1,0 +1,33 @@
+day,subject,start,end,duration,alternate
+Day 1,Block A,8:30,9:55,85,
+Day 1,Break,9:55,10:15,20,
+Day 1,Block B,10:15,11:35,80,
+Day 1,Passing AM,11:35,11:40,5,
+Day 1,Flex,11:40,12:05,25,
+Day 1,Lunch,12:05,12:45,40,
+Day 1,Block C,12:45,14:05,80,
+Day 1,Passing PM,14:05,14:10,5,
+Day 1,Block D,14:10,15:30,80,
+Day 2,Block E,8:30,9:55,85,
+Day 2,Break,9:55,10:15,20,
+Day 2,Block F,10:15,11:35,80,
+Day 2,Passing AM,11:35,11:40,5,
+Day 2,Flex,11:40,12:05,25,
+Day 2,Lunch,12:05,12:45,40,
+Day 2,Block G,12:45,14:05,80,
+Day 2,Passing PM,14:05,14:10,5,
+Day 2,Block H,14:10,15:30,80,
+Day 1,Block A,8:30,9:50,80,TRUE
+Day 1,Break,9:50,10:05,15,TRUE
+Day 1,Block B,10:05,11:25,80,TRUE
+Day 1,Passing AM,11:25,11:30,5,TRUE
+Day 1,Block C,11:30,12:50,80,TRUE
+Day 1,Lunch,12:50,13:25,35,TRUE
+Day 1,Block D,13:25,14:45,80,TRUE
+Day 2,Block E,8:30,9:50,80,TRUE
+Day 2,Break,9:50,10:05,15,TRUE
+Day 2,Block F,10:05,11:25,80,TRUE
+Day 2,Passing AM,11:25,11:30,5,TRUE
+Day 2,Block G,11:30,12:50,80,TRUE
+Day 2,Lunch,12:50,13:25,35,TRUE
+Day 2,Block H,13:25,14:45,80,TRUE

@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
-# coding: utf-8
+# ---
+# jupyter:
+#   jupytext:
+#     formats: ipynb:light,py:light
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.16.4
+#   kernelspec:
+#     display_name: Python 3 (ipykernel)
+#     language: python
+#     name: python3
+# ---
 
-
-
-
-
-
+# +
 from pathlib import Path
 import json
 import csv
@@ -17,11 +26,7 @@ import re
 # from dateutil import rrule
 from datetime import datetime, timedelta
 
-
-
-
-
-
+# +
 # Constants
 
 # expected headers in schedule CSV files
@@ -38,9 +43,7 @@ WEEKDAYS = {
 }
 
 
-
-
-
+# -
 
 def do_exit(msg=None, value=0):
     if value > 0:
@@ -51,10 +54,6 @@ def do_exit(msg=None, value=0):
         print(f'\t{msg}')
     
     sys.exit(0)
-
-
-
-
 
 
 def slugify(value, allow_unicode=False):
@@ -74,10 +73,7 @@ def slugify(value, allow_unicode=False):
     return re.sub(r'[-\s]+', '_', value).strip('-_')
 
 
-
-
-
-
+# +
 def csv_to_json(csv_file):
     '''convert csv_file schedule to JSON
     
@@ -179,9 +175,7 @@ def csv_to_json(csv_file):
 #     return calendar_json_file
 
 
-
-
-
+# -
 
 def read_non_instruction(file, dt_format):
     '''read flat text file containing non-instructional days
@@ -225,10 +219,7 @@ def read_non_instruction(file, dt_format):
 
 
 
-
-
-
-def set_school_days(start, end, non_instruction, dt_format):
+def set_school_days(start, end, non_instruction=[], dt_format='%Y/%m/%d', week_days=(0, 4)):
     '''create a list of school days excluding non-instructional and weekends
     
     Args:
@@ -236,12 +227,25 @@ def set_school_days(start, end, non_instruction, dt_format):
         end(`str`): last day of school in dt_format
         non_instruction(`list` of `datetime`): non-instructional days
         dt_format(`str`): datetime format string (e.g. %Y/%m/%d)
+        week_days(tuple): instructional weekdays in first-last format (0=Monday, 6=Sunday)
+            use (0, 4) for MONDAY-FRIDAY; (6, 3) for SUNDAY-THURSDAY
         
     Returns:
-        `list`'''
-    
-    start_dt = datetime.strptime(start, dt_format)
-    end_dt = datetime.strptime(end, dt_format)
+        `list` of date objects'''
+
+    day_values = [v for v in WEEKDAYS.values()]
+    wk_start, wk_end = week_days
+
+    if wk_start <= wk_end:
+        working_days = list(day_values[wk_start:wk_end +1])
+    else:
+        working_days = list(day_values[wk_start:] + day_values[:wk_end + 1])
+
+    try:
+        start_dt = datetime.strptime(start, dt_format)
+        end_dt = datetime.strptime(end, dt_format)
+    except ValueError as e:
+        do_exit(f'Invalid date provided for year start/end. Check dates and try again', 1)
     
     delta = end_dt - start_dt
     
@@ -250,15 +254,15 @@ def set_school_days(start, end, non_instruction, dt_format):
     school_days = []
 #     for dt in rrule.rrule(rrule.DAILY, dtstart=start_dt, until=end_dt):
     for dt in all_days:
-        if dt not in non_instruction and datetime.weekday(dt) in range(0, 5):
+        if dt not in non_instruction and datetime.weekday(dt) in working_days:
             school_days.append(dt)
     return school_days
 
 
+# +
+# set_school_days('2023/08/17', '2024/06/19', [], week_days=(6, 3))
 
-
-
-
+# +
 def get_args():
     # need to adjust how parsers are added to require one of the two sub parsers
     # https://stackoverflow.com/questions/23349349/argparse-with-required-subparser
@@ -305,14 +309,20 @@ def get_args():
         
     parser.add_argument('--output', '-o', default='~/Desktop',
                        help='Folder to use for output of CSV Schedules (default is ~/Desktop)',
-                       metavar='/output/location/')    
+                       metavar='/output/location/')
+
+    parser.add_argument('--week_start', default='Monday', 
+                        help='First day of a typical school week (e.g. Monday). Default: Monday',
+                        metavar='Monday-Sunday')
+    
+    parser.add_argument('--week_end', default='Friday', 
+                       help='Last day of a typical school week (e.g. Friday). Default: Friday',
+                       metavar='Monday-Sunday')
+    
     return parser.parse_known_args()
 
 
-
-
-
-
+# +
 def main():
     args, unknown_args = get_args()
 
@@ -326,26 +336,37 @@ def main():
 #         print(f'wrote: {json_output}')
 #         # bail out after conversion
 #         do_exit()
-    
-    non_inst_file = Path(args.non_instruction).expanduser().resolve()
-    dt_format = args.date_format
 
-    non_instruction = read_non_instruction(file=non_inst_file, dt_format=dt_format)
+    
+    
+    dt_format = args.date_format
     start = args.start
     end = args.end
 
-    schedule_file = Path(args.schedule_file).expanduser().resolve()
+    try:
+        schedule_file = Path(args.schedule_file).expanduser().resolve()
+        non_inst_file = Path(args.non_instruction).expanduser().resolve()        
+
+    except Exception as e:
+        do_exit(f'Failed to use specified file due to error: {e}; exiting', 1)
+
+    non_instruction = read_non_instruction(file=non_inst_file, dt_format=dt_format)
+
     
     schedule_json = csv_to_json(schedule_file)
 
-#     schedule_json = read_json_schedule(schedule_file)
+    try:
+        week_start = WEEKDAYS[args.week_start.upper()]
+        week_end = WEEKDAYS[args.week_end.upper()]
+    except KeyError as e:
+        do_exit(f'Invalid weekday for week start/week end supplied: {e}; known days: {list(WEEKDAYS.keys())}', 1)
 
     try:
         alternate_day = WEEKDAYS[args.alternate_day.upper()]
     except AttributeError:
         alternate_day = None
     except KeyError as e:
-        do_exit(f'Unknown alternate_day: "{args.alternate_day}"; known alternate days: {WEEKDAYS}', 1)
+        do_exit(f'Unknown alternate_day: "{args.alternate_day}"; known alternate days: {list(WEEKDAYS.keys())}', 1)
 
     output = Path(f'{args.output}/{schedule_file.stem}/').expanduser().resolve()
 
@@ -365,7 +386,9 @@ def main():
 
 
     school_days = set_school_days(start=start, end=end, 
-                                  non_instruction=non_instruction, dt_format=dt_format)
+                                  non_instruction=non_instruction, 
+                                  dt_format=dt_format,
+                                  week_days=(week_start, week_end))
 
     # build a list of all the events from lookup dictionaries
     all_events = []
@@ -432,14 +455,23 @@ def main():
                 writer.writeheader()
                 for event in value:
                     writer.writerow(event)
+    print(f'Output schedule files to: {output}')
     return None
 
+# +
+# import sys
 
+# sys.argv = sys.argv[0:3]
+# sys.argv = sys.argv + ['--week_start', 'Sunday', 
+#                        '--week_end', 'Thursday', 
+#                        '-a', 'Tuesday',
+#                        '--non_instruction', './non_instruction_23-24.csv', 
+#                        '-c', './bell_schedule_hs.csv', 
+#                        '-s', '2023/08/17', 
+#                        '-e', '2024/06/16']
 
-
-
+# sys.argv
+# -
 
 if __name__ == '__main__':
     q = main()
-
-

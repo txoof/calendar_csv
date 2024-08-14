@@ -1,37 +1,36 @@
 # Google Calendar CSV Generator
 
-Python script for generating files suitable for import into Google Calendar based on `.csv` schedule files for N-day rotating block schedules. This script will produce one CSV for each unique event as well as a CSV for each day in the block rotation.
+Python script for generating files suitable for import into Google Calendar based on a schedule files for N-day rotating block schedules. This script will produce one CSV for each unique event as well as a CSV for each day in the block rotation.
 
-If your schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven CSV files will be produced, one for each event in the rotation: e.g. Block A, Block B, Block C, lunch, breaks. Each file produced will contain all of the calendar events for all days that match that event.
+For example, if your rotating schedule has "Block A, Block B, Block C, Lunch, Break 1, Break 2" seven CSV files will be produced, one for each event in the rotation: e.g. Block A, Block B, Block C, lunch, breaks. Each file produced will contain all of the calendar events for all days that match that event.
 
-## Table of Contents
+## Table of Contents <!-- omit from toc -->
 
 - [Google Calendar CSV Generator](#google-calendar-csv-generator)
-  - [Table of Contents](#table-of-contents)
   - [Common Patterns \& Use Case](#common-patterns--use-case)
   - [Getting Started](#getting-started)
-    - [Novice Instructions](#novice-instructions)
   - [Use](#use)
-    - [Creating a CSV file](#creating-a-csv-file)
-    - [Generate Calendar CSV Files](#generate-calendar-csv-files)
+  - [Import CSV Files into Google Calendar](#import-csv-files-into-google-calendar)
   - [Command Reference](#command-reference)
 
 ## Common Patterns & Use Case
 
-Our school uses an 6-Day (Elementary School) and 8-Day (Middle/High School) rotation schedule with an alternate, shortened time-table that is used on a Wednesdays. Our instructional days are Monday-Friday.
+Many schools use a rotating schedule with an alternate, shortened time-table that is used on one day. In the example shown below, the schedule begins with a "Day 1" on the first day of school and continues 8 school-days before starting again. Weekends and holidays are not counted, only days that are considered "instructional" are counted.
 
-The rotation schedule begins with a "Day 1" on the first day of school and continues N school-days before starting again. On Wednesdays we have an early dismissal that uses an "alternate" time-table with shorter blocks.
+In the example below, Wednesdays have an altered schedule with shorter blocks and an earlier dismissal time. Any time a school day falls on a Wednesday, a shortened version of the schedule is used.
 
 | Day 1 | Day 2 | Day 3 | Day 4 | Day 5 | Day 6 | Day 7 | Day 8 | Day 1 |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Weds: 21/08/17 | Thurs: 21/08/18 | Fri: 21/08/19 | Mon: 21/08/23 | Tues: 21/08/24 | Weds: 21/08/25 | Thurs: 21/08/26 | Fri: 21/08/27 | Mon: 21/08/30 |
 | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Standard Sch. | Alternate Sch. | Standard Sch. | Standard Sch. | Standard Sch. |
 
-Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and Lunch. This script produces 14 calendar CSV files. Teachers can then import just the blocks that are relevant to their work (e.g. [A, B, D, F, H, Break 2, Flex] ). The Rotation_Day.csv includes "all day" events that indicate the rotation day as well as the N/Total school day.
+The example [high schools](./bell_schedule_hs.csv) schedule has 8 instructional blocks (A..H), two breaks, a "Flex" block and Lunch. When run through this scrip, 14 CSV files will be produced, one for each instructional block, the flex, break and lunch blocks. Teachers can then import just the blocks that are relevant to their work (e.g. [A, B, D, F, H, Break 2, Flex] ). Additionally, a rotation_Day.csv is included. The rotation_day file includes "all day" events that indicate the rotation day as well as the N/Total school days.
+
+To get started, check the HS or MS bell schedule files included in this repo and see the [Creating a CSV File](#creating-a-csv-file) below.
 
 ## Getting Started
 
-### Novice Instructions
+### Novice Instructions <!-- omit from toc -->
 
 1. [Download this Zip File](https://github.com/txoof/calendar_csv/archive/refs/heads/master.zip)
 2. Unpack the zip file by double clicking on it in *Finder*
@@ -42,7 +41,7 @@ Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and
 ![Terminal](./Documentation/terminal.png)
 1. Type `cd` followed by a space in the terminal window
 2. Click on the unzipped folder in Finder and drag it into the terminal window. Then press `Enter` (`⏎` key).
-   - This will add "path" the program so you don't need to type it
+   - This will add the "path" to the program so you don't need to type it
 ![drag folder](Documentation/drag_folder.gif)
 1. Paste the following command into the terminal window and press enter. **NOTE:** you may need to change the file names and dates to match your files and dates before pressing `Enter` (`⏎` key).
    - `./gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv
@@ -53,7 +52,7 @@ Our highschool has 8 instructional blocks (A..H), two breaks, a "Flex" block and
 
 You will need the following:
 
-* Schedule file in [`.csv` format](./hs_sample.csv)
+* Schedule file in [`.csv` format](./bell_schedule_hs.csv)
   * Blank lines are ignored
 * Non-instructional days file 
   * [Flat file with one day per line in YYYY/MM/DD format](./non_instruction_sample.txt)
@@ -61,24 +60,32 @@ You will need the following:
 * First and Last date of the instructional term
   * `YYYY/MM/DD` format: `2022/08/29`
 
-### Creating a CSV file
+### Creating a Schedule file <!-- omit from toc -->
 
-To create a CSV file, use the sample [CSV template](./sample.csv) provided.
+To create a CSV file, use the sample [CSV template](./bell_schedule_sample.csv) provided.
 
-See the [HS Sample](./hs_sample.csv) for a 8-Block rotation over 8 days with an alternate shortened schedule. The [ES Sample](./es_sample.csv) shows a 6 day rotation with no alternate wednesday schedule.
+See the [HS Sample](./bell_schedule_hs.csvv) for a 8-Block rotation over 8 days with an alternate shortened schedule.
 
 **Required Columns:**
 
-* **`day`** Unique title of day in rotation (e.g. Day 1, Blue, Alpha, etc.)
-* **`subject`** Title of subject/block name (e.g. Block A, 3A Music, Lunch, etc.)
-* **`start`** Start time in HH:MM format (e.g. 13:55, 08:30)
-* **`end`** End time in HH:MM format
-* **`alternate`** this is an "alternate" schedule as boolean: (True/False/\<blank\>)
-* All other columns will be ignored
+- **`day`** Unique title of day in rotation (e.g. Day 1, Blue, Alpha, etc.)
+- **`subject`** Title of subject/block name (e.g. Block A, 3A Music, Lunch, etc.)
+- **`start`** Start time in HH:MM format (e.g. 13:55, 08:30)
+- **`end`** End time in HH:MM format
+- **`alternate`** this is an "alternate" schedule as boolean: (True/False/\<blank\>)
+- Any additional columns will be ignored
 
-### Generate Calendar CSV Files
+#### Considerations When Creating a CSV Schedule File <!-- omit from toc -->
 
-Example
+- Use consistent names for the `subject` column. Events will be grouped based on the names. For example all events called *A Block* will be grouped in one file for import into a google calendar. If the file contains *A Block* in some places and *Block A* in others, they will be treated as different events. BE CONSISTENT.
+- Day names can be anything that suits your needs. Again, be consistent for sanity.
+
+
+### Generate Calendar CSV Files <!-- omit from toc -->
+
+Examples:
+
+- Generate a calendar based on `school_schedule_file.csv`, for a school year that begins on 8 August, 2022 and ends on 16 June 2023 with an alternate timing schedule on Wednesdays.
 
 ```bash
 ./gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv \
@@ -86,25 +93,77 @@ Example
 --alternate_day Wednesday
 ```
 
+- Generate a calendar based on `school_schedule_file.csv`, for a school year that begins on 8 August, 2022 and ends on 16 June 2023 with an alternate timing schedule on Tuesdays with a week that begins on Sunday and ends on Thursday.
+
+```bash
+./gcal_csv_generator.py  --schedule_file ./school_schedule_file.csv \
+--start "2022/08/17" --end "2023/06/16" --non_instruction ./non_instruction.txt \
+--alternate_day Wednesday --week_start Sunday --week_end Friday
+```
+
+## Import CSV Files into Google Calendar
+
+The CSV files meet the specifications for Google Calendar and can be easily imported. See [Google's Excelent instructions for importing Events](https://support.google.com/calendar/answer/37118?hl=en&co=GENIE.Platform%3DDesktop) for more information. Before continuing ***READ ALL OF THIS SECTION.***
+
+Teachers that need to add *Block A* to their calendar import the *Block_A.csv* file into their google calendar with no modifications. It is possible to modify the CSV file to make events easier to read in Google Calendar. See [Modifying CSV Files](#modifying-csv-files) below.
+
+### IMPORTANT WARNING <!-- omit from toc -->
+
+Google makes it very easy to import events, but there is **absolutely no way to undo an import**. Imported events must be manually deleted ONE-BY-ONE. It is prudent to create a "test calendar" and import your events for verification before commiting them to your personal calendar. **YOU HAVE BEEN WARNED.**
+
+### Modifying CSV Files <!-- omit from toc -->
+
+By default, the CSV will add events to the calendar using the `subject` line provided in the schedule file. This will typically look something like "Block B" or "Flex Time" or "AM Break".
+
+To make the events easier to read in your calendar, open the csv in Google Sheets, Excel, vim or your favorite stream editor and find/replace the subject with a title of your choice.
+
+For example, if you teach "Great Authors: Homer" in Block B, and want "Great Authors: Homer" to appear on your calendar, do the following:
+
+1. Obtain a copy of the "Block_B.csv" file
+2. Open the file in your favorite editor (e.g. Google Sheets)
+3. Click: Edit > Find and Replace
+4. In the Find and Replace dialogue find "Block B" and replace with "Great Authors: Homer"
+5. Export the file as a CSV and import into Google Calendar
+
+
+Here's a nice one-liner to do it with sed:
+```bash
+$ sed 's/Block B/Great Authors: Homer/g' > great_authors.csv
+```
+
 ## Command Reference
 
-`--schedule_file/-c`:
-.csv formatted schedule file (required)
+```text
+Usage: gcal_csv_generator.py [-h] --schedule_file /schedule/file.csv --start "YYYY/MM/DD" --end "YYYY/MM/DD" --non_instruction /path/to/non_instruction.txt [--date_format "%Y/%m/%d"] [--alternate_day Wednesday] [--output /output/location/] [--week_start Monday-Sunday] [--week_end Monday-Sunday]
 
-`--start/-s`:
-First day of school in YYYY/MM/DD format (required)
+options:
+  -h, --help            show this help message and exit
 
-`--end/-e`:
-Last day of school in YYYY/MM.DD format (required)
+  --schedule_file /schedule/file.csv, -c /schedule/file.csv
+                        file containing CSV schedule data
 
-`--non-instruction/-n`:
-flat file with one non-instructional day per line (required)
+  --start "YYYY/MM/DD", -s "YYYY/MM/DD"
+                        First day of classes in YYYY/MM/DD format
 
-`--date_format`:
-Format of dates; the default is in YYYY/MM/DD format. See the [Python datetime documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) for alternative formats. (optional)
+  --end "YYYY/MM/DD", -e "YYYY/MM/DD"
+                        Last day of classes in YYYY/MM/DD format
 
-`--alternate_day`
-Single day of the week to use an alternative day schedule (e.g. Wednesday, Tuesday). (optional)
+  --non_instruction /path/to/non_instruction.txt, -n /path/to/non_instruction.txt
+                        File containing non-instructional days between start and end date, one per line matching the daytime format
+                        (YYYY/MM/DD)
 
-`--output/-o`
-Location for schedule file output. Default is ~/Desktop
+  --date_format "%Y/%m/%d", -d "%Y/%m/%d"
+                        datetime format see: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+
+  --alternate_day Wednesday, -a Wednesday
+                        single day to use "alternate" schedule specified in the schedule file
+
+  --output /output/location/, -o /output/location/
+                        Folder to use for output of CSV Schedules (default is ~/Desktop)
+
+  --week_start Monday-Sunday
+                        First day of a typical school week (e.g. Monday). Default: Monday
+
+  --week_end Monday-Sunday
+                        Last day of a typical school week (e.g. Friday). Default: Friday
+```
