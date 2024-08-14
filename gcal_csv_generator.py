@@ -2,20 +2,17 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: ipynb:light
+#     formats: ipynb:light,py:light
 #     text_representation:
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.16.1
+#       jupytext_version: 1.16.4
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
-
-# !jupyter nbconvert --to python --template python_clean gcal_csv_generator.ipynb
-
 
 # +
 from pathlib import Path
@@ -315,11 +312,11 @@ def get_args():
                        metavar='/output/location/')
 
     parser.add_argument('--week_start', default='Monday', 
-                        help='First day of a typical school week (e.g. Monday)',
+                        help='First day of a typical school week (e.g. Monday). Default: Monday',
                         metavar='Monday-Sunday')
     
     parser.add_argument('--week_end', default='Friday', 
-                       help='Last day of a typical school week (e.g. Friday',
+                       help='Last day of a typical school week (e.g. Friday). Default: Friday',
                        metavar='Monday-Sunday')
     
     return parser.parse_known_args()
