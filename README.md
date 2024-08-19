@@ -130,9 +130,9 @@ For example, if you teach "Great Authors: Homer" in Block B, and want "Great Aut
 5. Export the file as a CSV and import into Google Calendar
 
 
-Here's a nice one-liner to do it with sed:
+Here's a nice one-liner to do a find and replace with sed:
 ```bash
-$ sed 's/Block B/Great Authors: Homer/g' > great_authors.csv
+$ cat Block_B.csv | sed 's/Block B/Great Authors: Homer/g' > great_authors.csv
 ```
 
 ## Command Reference
